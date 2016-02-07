@@ -1,97 +1,114 @@
-## React Starter Kit — "isomorphic" web app boilerplate
+## Getting Started
 
-[![Support us on Bountysource](https://dl.dropboxusercontent.com/u/16006521/react-starter-kit/banner.png)](https://salt.bountysource.com/teams/react-starter-kit)<br>
+### Requirements
 
-> [React Starter Kit](https://www.reactstarterkit.com) is an opinionated
-> boilerplate for web development built on top of Facebook's
-> [React](https://facebook.github.io/react/) library,
-> [Node.js](https://nodejs.org/) / [Express](http://expressjs.com/) server
-> and [Flux](http://facebook.github.io/flux/) architecture. Containing
-> modern web development tools such as [Webpack](http://webpack.github.io/),
-> [Babel](http://babeljs.io/) and [BrowserSync](http://www.browsersync.io/).
-> Helping you to stay productive following the best practices. A solid starting
-> point for both professionals and newcomers to the industry.
+  * Mac OS X, Windows, or Linux
+  * [Node.js](https://nodejs.org/) v5.0 or newer
+  * `npm` v3.3 or newer (new to [npm](https://docs.npmjs.com/)?)
+  * `node-gyp` prerequisites mentioned [here](https://github.com/nodejs/node-gyp)
+  * Text editor or IDE pre-configured with React/JSX/Flow/ESlint ([learn more](./how-to-configure-text-editors.md))
 
-See [demo](http://demo.reactstarterkit.com) &nbsp;|&nbsp;
-[docs](https://github.com/kriasoft/react-starter-kit/tree/master/docs) &nbsp;|&nbsp;
-[bugs & feature requests](https://waffle.io/kriasoft/react-starter-kit) &nbsp;|&nbsp;
-join [#react-starter-kit](https://gitter.im/kriasoft/react-starter-kit) chatroom to stay up to date &nbsp;|&nbsp;
-visit our sponsors:
+### Quick Start
 
-[![Rollbar - Full-stack error tracking for all apps in any language](https://dl.dropboxusercontent.com/u/16006521/react-starter-kit/rollbar.png)](https://rollbar.com/?utm_source=reactstartkit(github)&utm_medium=link&utm_campaign=reactstartkit(github)) &nbsp;&nbsp;
-[![Localize - Translate your web app in minutes](https://dl.dropboxusercontent.com/u/16006521/react-starter-kit/localize.png)](https://localizejs.com/?cid=802&utm_source=rsk)
+#### 1. Get the latest version
 
-### Getting Started
+You can start by cloning the latest version of React Starter Kit (RSK) on your
+local machine by running:
 
-  * Follow the [getting started guide](./docs/getting-started.md) to download and run the project
-  * Check the [code recipes](./docs/recipes) used in this boilerplate, or share yours
-
-### Directory Layout
-
-```
-.
-├── /build/                     # The folder for compiled output
-├── /docs/                      # Documentation files for the project
-├── /node_modules/              # 3rd-party libraries and utilities
-├── /src/                       # The source code of the application
-│   ├── /actions/               # Action creators that allow to trigger a dispatch to stores
-│   ├── /api/                   # REST API / Relay endpoints
-│   ├── /components/            # React components
-│   ├── /constants/             # Constants (action types etc.)
-│   ├── /content/               # Static content (plain HTML or Markdown, Jade, you name it)
-│   ├── /core/                  # Core framework and utility functions
-│   ├── /decorators/            # Higher-order React components
-│   ├── /public/                # Static files which are copied into the /build/public folder
-│   ├── /stores/                # Stores contain the application state and logic
-│   ├── /client.js              # Client-side startup script
-│   ├── /config.js              # Global application settings
-│   ├── /routes.js              # Universal (isomorphic) application routes
-│   └── /server.js              # Server-side startup script
-├── /tools/                     # Build automation scripts and utilities
-│   ├── /lib/                   # Library for utility snippets
-│   ├── /build.js               # Builds the project from source to output (build) folder
-│   ├── /bundle.js              # Bundles the web resources into package(s) through Webpack
-│   ├── /clean.js               # Cleans up the output (build) folder
-│   ├── /copy.js                # Copies static files to output (build) folder
-│   ├── /deploy.js              # Deploys your web application
-│   ├── /run.js                 # Helper function for running build automation tasks
-│   ├── /runServer.js           # Launches (or restarts) Node.js server
-│   ├── /start.js               # Launches the development web server with "live reload"
-│   └── /webpack.config.js      # Configurations for client-side and server-side bundles
-│── package.json                # The list of 3rd party libraries and utilities
-└── preprocessor.js             # ES6 transpiler settings for Jest
+```shell
+$ git clone -o react-starter-kit -b master --single-branch \
+      https://github.com/kriasoft/react-starter-kit.git MyApp
+$ cd MyApp
 ```
 
-### Related Projects
+Alternatively, you can start a new project based on RSK right from
+[WebStorm IDE](https://www.jetbrains.com/webstorm/help/create-new-project-react-starter-kit.html),
+or by using [Yeoman generator](https://www.npmjs.com/package/generator-react-fullstack).
 
-  * [React Static Boilerplate](https://github.com/koistya/react-static-boilerplate) — Generates static websites from React components
-  * [Babel Starter Kit](https://github.com/kriasoft/babel-starter-kit) — Boilerplate for authoring JavaScript/React.js libraries
-  * [React Decorators](https://github.com/kriasoft/react-decorators) — A collection of higher-order React components
+#### 2. Run `npm install`
 
-### Learn More
+This will install both run-time project dependencies and developer tools listed
+in [package.json](../package.json) file.
 
-  * [Getting Started with React.js](http://facebook.github.io/react/)
-  * [Getting Started with GraphQL and Relay](https://quip.com/oLxzA1gTsJsE)
-  * [React.js Questions on StackOverflow](http://stackoverflow.com/questions/tagged/reactjs)
-  * [React.js Discussion Board](https://discuss.reactjs.org/)
-  * [Flux Architecture for Building User Interfaces](http://facebook.github.io/flux/)
-  * [Jest - Painless Unit Testing](http://facebook.github.io/jest/)
-  * [Flow - A static type checker for JavaScript](http://flowtype.org/)
-  * [The Future of React](https://github.com/reactjs/react-future)
-  * [Learn ES6](https://babeljs.io/docs/learn-es6/), [ES6 Features](https://github.com/lukehoban/es6features#readme)
+#### 3. Run `npm start`
 
-### Support
+This command will build the app from the source files (`/src`) into the output
+`/build` folder. As soon as the initial build completes, it will start the
+Node.js server (`node build/server.js`) and [Browsersync](https://browsersync.io/)
+with [HMR](https://webpack.github.io/docs/hot-module-replacement) on top of it.
 
-  * [#react-starter-kit](https://gitter.im/kriasoft/react-starter-kit) on Gitter — Feedback, feature requests, Q&A
-  * [@koistya](https://www.codementor.io/koistya) on Codementor — Mentorship, pair coding, code reviews
-  * support@kriasoft.com — Customization requests, help with GraphQL/Relay, database design etc.
+Now you can open your web app in a browser, on mobile devices and start
+hacking. Whenever you modify any of the source files inside the `/src` folder,
+the module bundler ([Webpack](http://webpack.github.io/)) will recompile the
+app on the fly and refresh all the connected browsers.
 
-### License
+![browsersync](https://dl.dropboxusercontent.com/u/16006521/react-starter-kit/brwosersync.jpg)
 
-Copyright © 2014-2016 Kriasoft, LLC. This source code is licensed under the MIT
-license found in the [LICENSE.txt](https://github.com/kriasoft/react-starter-kit/blob/master/LICENSE.txt)
-file. The documentation to the project is licensed under the
-[CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/) license.
+Note that the `npm start` command launches the app in `development` mode,
+the compiled output files are not optimized and minimized in this case.
+You can use `--release` command line argument to check how your app works
+in release (production) mode:
 
----
-Made with ♥ by Konstantin Tarkus ([@koistya](https://twitter.com/koistya)) and [contributors](https://github.com/kriasoft/react-starter-kit/graphs/contributors)
+```shell
+$ npm start -- --release
+```
+
+### How to Build, Test, Deploy
+
+If you need just to build the app (without running a dev server), simply run:
+
+```shell
+$ npm run build
+```
+
+or, for a production build:
+
+```shell
+$ npm run build -- --release
+```
+
+After running this command, the `/build` folder will contain the compiled
+version of the app. For example, you can launch Node.js server normally by
+running `node build/server.js`.
+
+To check the source code for syntax errors and potential issues run:
+
+```shell
+$ npm run lint
+```
+
+To launch unit tests:
+
+```shell
+$ npm test
+```
+
+Test any javascript module by creating a `__tests__/` directory where
+the file is. Append `-test.js` to the filename and
+[Jest](https://facebook.github.io/jest/) will do the rest.
+
+To deploy the app, run:
+
+```shell
+$ npm run deploy
+```
+
+The deployment script `tools/deploy.js` is configured to push the contents of
+the `/build` folder to a remote server via Git. You can easily deploy your app
+to [Azure Web Apps](https://azure.microsoft.com/en-us/services/app-service/web/),
+or [Heroku](https://www.heroku.com/) this way. Both will execute `npm install --production`
+upon receiving new files from you. Note, you should only deploy the contents
+of the `/build` folder to a remote server.
+
+### How to Update
+
+If you need to keep your project up to date with the recent changes made to RSK,
+you can always fetch and merge them from [this repo](https://github.com/kriasoft/react-starter-kit)
+back into your own project by running:
+
+```shell
+$ git checkout master
+$ git fetch react-starter-kit
+$ git merge react-starter-kit/master
+$ npm install
+```

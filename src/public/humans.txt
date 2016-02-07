@@ -3,11 +3,7 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
-
-# THANKS
-
-    <name>
+    Kaio Magalhães -- Software Engineer -- kaiomagalhaes.com
 
 # TECHNOLOGY COLOPHON
 
